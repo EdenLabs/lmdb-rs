@@ -115,6 +115,7 @@ impl Error {
 }
 
 impl fmt::Display for Error {
+    #[allow(deprecated)]
     fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
         write!(fmt, "{}", self.description())
     }
@@ -149,6 +150,7 @@ mod test {
     use super::*;
 
     #[test]
+    #[allow(deprecated)]
     fn test_description() {
         assert_eq!("Permission denied", Error::from_err_code(13).description());
         assert_eq!("MDB_NOTFOUND: No matching key/data pair found", Error::NotFound.description());
