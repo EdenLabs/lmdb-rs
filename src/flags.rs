@@ -1,6 +1,6 @@
 use libc::c_uint;
 
-use ffi::*;
+use crate::ffi::*;
 
 bitflags! {
     #[doc="Environment options."]

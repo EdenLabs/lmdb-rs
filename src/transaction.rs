@@ -12,23 +12,23 @@ use std::{
     slice,
 };
 
-use ffi;
+use crate::ffi;
 
-use cursor::{
+use crate::cursor::{
     RoCursor,
     RwCursor,
 };
-use database::Database;
-use environment::{
+use crate::database::Database;
+use crate::environment::{
     Environment,
     Stat,
 };
-use error::{
+use crate::error::{
     lmdb_result,
     Error,
     Result,
 };
-use flags::{
+use crate::flags::{
     DatabaseFlags,
     EnvironmentFlags,
     WriteFlags,

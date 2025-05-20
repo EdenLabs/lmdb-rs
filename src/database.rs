@@ -2,9 +2,9 @@ use libc::c_uint;
 use std::ffi::CString;
 use std::ptr;
 
-use ffi;
+use crate::ffi;
 
-use error::{
+use crate::error::{
     lmdb_result,
     Result,
 };

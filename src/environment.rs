@@ -16,25 +16,25 @@ use std::{
     result,
 };
 
-use ffi;
+use crate::ffi;
 
-use byteorder::{
+use crate::byteorder::{
     ByteOrder,
     NativeEndian,
 };
 
-use cursor::Cursor;
-use database::Database;
-use error::{
+use crate::cursor::Cursor;
+use crate::database::Database;
+use crate::error::{
     lmdb_result,
     Error,
     Result,
 };
-use flags::{
+use crate::flags::{
     DatabaseFlags,
     EnvironmentFlags,
 };
-use transaction::{
+use crate::transaction::{
     RoTransaction,
     RwTransaction,
     Transaction,
@@ -421,7 +421,7 @@ impl EnvironmentBuilder {
             }
             let path = match CString::new(path.as_os_str().as_bytes()) {
                 Ok(path) => path,
-                Err(..) => return Err(::Error::Invalid),
+                Err(..) => return Err(crate::Error::Invalid),
             };
             lmdb_try_with_cleanup!(
                 ffi::mdb_env_open(env, path.as_ptr(), self.flags.bits(), mode),

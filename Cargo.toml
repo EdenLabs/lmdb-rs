@@ -11,6 +11,7 @@ repository = "https://github.com/mozilla/lmdb-rs.git"
 readme = "README.md"
 keywords = ["LMDB", "database", "storage-engine", "bindings", "library"]
 categories = ["database"]
+edition = "2021"
 
 exclude = [
   # Exclude CI config files from package.
